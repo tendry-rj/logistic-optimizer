@@ -1,46 +1,68 @@
-# Optimisation Logistique Numérique
-## Projet L3 Informatique — Modélisation Mathématique 2026
+#  Optimisation Logistique - Problème de Transport
 
----
+**Application desktop** de résolution du **problème de transport à coût minimal** par **programmation linéaire** avec **PuLP + CBC**.
 
-## Installation des dépendances
+### Fonctionnalités
+
+- Interface graphique moderne avec **PyQt5**
+- Saisie interactive des demandes, capacités et coûts unitaires
+- Résolution automatique du problème d'optimisation
+- 4 visualisations claires avec **Matplotlib** :
+  - Répartition des flux (barres groupées)
+  - Utilisation des capacités des centres
+  - Heatmap des coûts effectifs
+  - Comparaison de scénarios
+- 5 scénarios prédéfinis testables en un clic
+- Contraintes avancées (Partie F) activables
+- Export des résultats en **CSV**
+- Sauvegarde et chargement de scénarios en **JSON**
+
+### Technologies
+
+- **Python** 3.8+
+- **PyQt5** — Interface graphique
+- **PuLP + CBC** — Programmation linéaire
+- **Matplotlib + NumPy** — Visualisations
+- **Pandas** (gestion des données)
+
+### Installation
 
 ```bash
-pip install pulp PyQt5 matplotlib numpy pandas
-```
+# 1. Cloner le repository
+git clone https://github.com/tonusername/logistic-optimizer.git
+cd logistic-optimizer
 
-## Lancement de l'application
+# 2. Créer un environnement virtuel
+python -m venv venv
 
-```bash
+# Windows :
+venv\Scripts\activate
+# Linux / Mac :
+# source venv/bin/activate
+
+# 3. Installer les dépendances
+pip install -r requirements.txt
+
+# 4. Lancer l'application
 python main.py
 ```
 
-## Structure du projet
+### Structure du projet
 
+```bash
+logistic-optimizer/
+├── main.py                    # Point d'entrée
+├── data/                      # Données du problème
+├── model/                     # Modèle PuLP
+├── ui/                        # Interface PyQt5
+├── visualization/             # Graphiques Matplotlib
+├── export/                    # Export CSV & JSON
+├── scenarios/                 # Scénarios prédéfinis
+├── requirements.txt
+├── .gitignore
+└── LICENSE
 ```
-projet_logistique/
-├── main.py                        ← Point d'entrée
-├── data/
-│   └── donnees.py                 ← Données du problème
-├── model/
-│   └── optimisation.py            ← Résolution PuLP
-├── ui/
-│   └── fenetre_principale.py      ← Interface PyQt5
-├── visualization/
-│   └── graphiques.py              ← Graphiques matplotlib
-└── export/
-    └── export_resultats.py        ← Export CSV / JSON
-```
 
-## Technologie IHM
-**PyQt5** — interface graphique native multi-plateforme.
+### Licence
+Ce projet est distribué sous **licence MIT** (voir le fichier LICENSE).
 
-## Fonctionnalités implémentées
-- Saisie et modification des demandes, capacités, coûts
-- Résolution du problème de programmation linéaire (PuLP / CBC)
-- Affichage de la solution optimale sous forme de tableau
-- 4 graphiques : flux, capacités, heatmap coûts, comparaison scénarios
-- 5 scénarios prédéfinis testables en un clic
-- Contraintes avancées (Partie F) activables
-- Export CSV et sauvegarde/chargement de scénarios JSON
-- Coloration automatique des centres saturés
