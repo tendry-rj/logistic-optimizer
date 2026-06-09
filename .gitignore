@@ -1,0 +1,36 @@
+# Environnements virtuels
+venv/
+env/
+.venv/
+ENV/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Fichiers générés par l'application
+*.csv
+*.json
+exports/
+scenarios/*.json
+*.log
+
+# Dossiers temporaires
+data/__pycache__/
+model/__pycache__/
+ui/__pycache__/
+visualization/__pycache__/
+export/__pycache__/
+
+# Système
+.DS_Store
+Thumbs.db
+
+# IDE / Editeurs
+.vscode/
+.idea/
+*.swp
+*.swo
